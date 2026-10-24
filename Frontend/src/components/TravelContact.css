@@ -1,0 +1,550 @@
+
+/* =========================================
+   TRAVEL CONTACT — RESPONSIVE STYLES
+========================================= */
+
+.destination-contact-actions {
+  display: grid;
+  grid-template-columns: minmax(75px, 0.8fr) minmax(0, 1.5fr);
+  gap: 8px;
+  width: 100%;
+  margin-top: 14px;
+}
+
+/* Common button styles */
+.destination-call-btn,
+.destination-callback-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 9px 10px;
+  box-sizing: border-box;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+.destination-call-btn svg,
+.destination-callback-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Call / WhatsApp button */
+.destination-call-btn {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #15803d;
+}
+
+.destination-call-btn:hover {
+  background: #dcfce7;
+  border-color: #4ade80;
+}
+
+.destination-call-btn:focus-visible,
+.destination-callback-btn:focus-visible,
+.callback-popup button:focus-visible {
+  outline: 3px solid rgba(22, 136, 232, 0.3);
+  outline-offset: 2px;
+}
+
+/* Request callback button */
+.destination-callback-btn {
+  background: #1688e8;
+  border-color: #1688e8;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(22, 136, 232, 0.16);
+}
+
+.destination-callback-btn:hover {
+  background: #1268d8;
+  border-color: #1268d8;
+  box-shadow: 0 5px 13px rgba(22, 136, 232, 0.23);
+}
+
+/* =========================================
+   POPUP OVERLAY
+========================================= */
+
+.callback-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+  box-sizing: border-box;
+
+  background: rgba(15, 23, 42, 0.68);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* =========================================
+   POPUP CONTAINER
+========================================= */
+
+.callback-popup {
+  position: relative;
+
+  width: 100%;
+  max-width: 450px;
+  max-height: calc(100dvh - 48px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  padding: 30px;
+  box-sizing: border-box;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+
+  background: #ffffff;
+  color: #111827;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.callback-popup-close {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f1f5f9;
+  color: #475569;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.callback-popup-close:hover {
+  background: #e2e8f0;
+  color: #111827;
+}
+
+/* =========================================
+   POPUP HEADER
+========================================= */
+
+.callback-popup-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding-right: 25px;
+}
+
+.callback-popup-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  color: #1688e8;
+}
+
+.callback-popup-label {
+  display: block;
+  margin-bottom: 4px;
+
+  color: #1688e8;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.callback-popup h2 {
+  margin: 0;
+  color: #111827;
+
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.callback-popup-description {
+  margin: 18px 0 22px;
+
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.callback-popup-description strong {
+  color: #1688e8;
+  font-weight: 800;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.callback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.callback-field {
+  min-width: 0;
+}
+
+.callback-field label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  margin-bottom: 7px;
+
+  color: #374151;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.optional-text {
+  color: #9ca3af;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* Inputs and select */
+.callback-field input,
+.callback-field select {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+  height: 45px;
+  padding: 0 12px;
+  box-sizing: border-box;
+
+  border: 1px solid #d7dce2;
+  border-radius: 8px;
+  outline: none;
+
+  background: #ffffff;
+  color: #111827;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.callback-field input::placeholder {
+  color: #9ca3af;
+}
+
+.callback-field input:focus,
+.callback-field select:focus {
+  border-color: #1688e8;
+  box-shadow: 0 0 0 3px rgba(22, 136, 232, 0.1);
+}
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.callback-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 100%;
+  min-height: 47px;
+  margin-top: 2px;
+  padding: 12px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: linear-gradient(135deg, #1688e8, #1268d8);
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(22, 136, 232, 0.2);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.callback-submit-btn:hover {
+  background: linear-gradient(135deg, #1268d8, #0f56c7);
+  box-shadow: 0 7px 18px rgba(22, 136, 232, 0.25);
+}
+
+.callback-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   POPUP FOOTER
+========================================= */
+
+.callback-popup-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 7px;
+
+  margin-top: 15px;
+
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.callback-footer-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  margin-top: 4px;
+
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+  .destination-contact-actions {
+    gap: 7px;
+    grid-template-columns: minmax(65px, 0.8fr) minmax(0, 1.5fr);
+  }
+
+  .destination-call-btn,
+  .destination-callback-btn {
+    min-height: 41px;
+    padding: 8px 7px;
+    font-size: 11px;
+  }
+
+  .callback-popup {
+    padding: 26px 24px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .destination-contact-actions {
+    grid-template-columns: minmax(70px, 0.8fr) minmax(0, 1.5fr);
+    gap: 7px;
+    margin-top: 12px;
+  }
+
+  .destination-call-btn,
+  .destination-callback-btn {
+    min-height: 42px;
+    padding: 8px 5px;
+    gap: 5px;
+    font-size: 10px;
+  }
+
+  .destination-call-btn svg,
+  .destination-callback-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .callback-popup-overlay {
+    align-items: center;
+    padding: 12px;
+  }
+
+  .callback-popup {
+    width: 100%;
+    max-width: 420px;
+    max-height: calc(100dvh - 24px);
+    padding: 23px 18px;
+    border-radius: 15px;
+  }
+
+  .callback-popup-header {
+    gap: 10px;
+    padding-right: 24px;
+  }
+
+  .callback-popup-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .callback-popup-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .callback-popup h2 {
+    font-size: 20px;
+  }
+
+  .callback-popup-description {
+    margin: 15px 0 18px;
+    font-size: 12px;
+  }
+
+  .callback-form {
+    gap: 12px;
+  }
+
+  .callback-field input,
+  .callback-field select {
+    height: 43px;
+    font-size: 12px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .destination-contact-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-call-btn,
+  .destination-callback-btn {
+    min-height: 40px;
+    font-size: 12px;
+  }
+
+  .callback-popup {
+    padding: 21px 15px;
+  }
+
+  .callback-popup h2 {
+    font-size: 18px;
+  }
+
+  .callback-popup-label {
+    font-size: 9px;
+  }
+}
+
+/* =========================================
+   SHORT SCREENS / LANDSCAPE MOBILE
+========================================= */
+
+@media (max-height: 600px) {
+  .callback-popup-overlay {
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .callback-popup {
+    max-height: calc(100dvh - 20px);
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .destination-call-btn,
+  .destination-callback-btn,
+  .callback-popup-close,
+  .callback-field input,
+  .callback-field select,
+  .callback-submit-btn {
+    transition: none;
+  }
+}
+
+
+/* Callback form submission feedback */
+
+.callback-form-message {
+  margin: 0;
+  padding: 11px 12px;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.callback-form-message[data-type="success"] {
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.callback-form-message[data-type="error"] {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.callback-submit-btn:disabled,
+.callback-popup-close:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+

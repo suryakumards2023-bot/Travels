@@ -1,0 +1,972 @@
+
+/* =========================================
+   MK TRAVELS - CAB RESULTS
+   Clean CSS | Responsive | No Duplicates
+========================================= */
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.cab-results-page {
+  min-height: 100vh;
+  padding: 28px 20px 64px;
+  background: #f4f7fb;
+  color: #172033;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.cab-results-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.cab-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  border: 1px solid #dce3ed;
+  border-radius: 9px;
+  background: #fff;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cab-back-btn:hover {
+  border-color: #1769e0;
+  color: #1769e0;
+  transform: translateX(-2px);
+}
+
+/* =========================
+   SEARCH CAB PANEL
+========================= */
+
+.cab-search-box {
+  display: grid;
+  grid-template-columns:
+    1.1fr
+    1.3fr
+    1.3fr
+    auto
+    1.15fr
+    1.1fr
+    1.15fr
+    auto;
+  align-items: end;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 24px;
+  padding: 18px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #e1e5ea;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cab-search-field {
+  min-width: 0;
+}
+
+.cab-search-field label {
+  display: block;
+  margin-bottom: 7px;
+  color: #555;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.cab-field-value {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 46px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border: 1px solid #d7dce2;
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cab-field-value:focus-within {
+  border-color: #1688e8;
+  box-shadow: 0 0 0 3px rgba(22, 136, 232, 0.1);
+}
+
+.cab-field-value svg {
+  flex-shrink: 0;
+  color: #777;
+}
+
+.cab-field-value input,
+.cab-field-value select {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #222;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.cab-field-value select {
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Search button */
+
+.cab-search-main-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: end;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(105deg, #1688e8, #1557cf);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cab-search-main-btn:hover {
+  background: #1268e8;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 16px rgba(21, 87, 207, 0.23);
+}
+
+/* =========================
+   RESULTS TITLE
+========================= */
+
+.cab-result-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 32px 0 20px;
+}
+
+.cab-eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #1769e0;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.cab-result-top h1 {
+  margin: 0;
+  color: #172033;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.cab-result-top h2 {
+  margin: 0 0 6px;
+  color: #172b4d;
+  font-size: 24px;
+}
+
+.cab-result-top p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 9px 0 0;
+  color: #667085;
+  font-size: 13px;
+}
+
+.cab-result-top p span {
+  color: #b0b8c5;
+}
+
+/* =========================
+   MAIN RESULTS LAYOUT
+========================= */
+
+.cab-results-layout {
+  display: grid;
+  grid-template-columns: 235px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+/* =========================
+   FILTER PANEL
+========================= */
+
+.cab-filter-box {
+  position: sticky;
+  top: 18px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(16, 24, 40, 0.035);
+}
+
+.cab-filter-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 21px;
+}
+
+.cab-filter-heading h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.cab-filter-heading button {
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: #1769e0;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filter-section h4 {
+  margin: 0 0 14px;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.filter-section label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 13px 0;
+  color: #596579;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.filter-section input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: #1769e0;
+  cursor: pointer;
+}
+
+.cab-filter-box hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #edf0f5;
+}
+
+/* =========================
+   CAB RESULTS LIST
+========================= */
+
+.cab-list {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Cabs Available + Sort By */
+
+.cab-list-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 12px;
+  width: 100%;
+  padding: 17px 19px;
+  box-sizing: border-box;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.cab-list-heading > div {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.cab-list-heading strong {
+  display: block;
+  color: #172033;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cab-list-heading p {
+  margin: 5px 0 0;
+  color: #7b8798;
+  font-size: 12px;
+}
+
+/* Sort control */
+
+.cab-sort-control {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  white-space: nowrap;
+  color: #667085;
+  font-size: 11px;
+}
+
+.cab-sort-control span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.cab-sort-control select {
+  width: 150px;
+  height: 36px;
+  padding: 0 27px 0 9px;
+  border: 1px solid #dce3ed;
+  border-radius: 7px;
+  appearance: none;
+  outline: none;
+  background: #fff;
+  color: #344054;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cab-sort-control select:focus {
+  border-color: #1688e8;
+}
+
+.cab-sort-control > svg {
+  position: absolute;
+  right: 8px;
+  pointer-events: none;
+}
+
+/* =========================
+   INDIVIDUAL CAB CARD
+========================= */
+
+.cab-result-card {
+  display: grid;
+  grid-template-columns: 176px minmax(0, 1fr) 145px;
+  gap: 19px;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 3px 13px rgba(16, 24, 40, 0.025);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cab-result-card:hover {
+  border-color: #c1d7f8;
+  box-shadow: 0 9px 26px rgba(16, 24, 40, 0.075);
+  transform: translateY(-2px);
+}
+
+/* Clickable car photo */
+
+.cab-result-photo-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 125px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 11px;
+  background: #edf2f7;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+.cab-result-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.cab-result-photo-button:hover .cab-result-photo {
+  transform: scale(1.07);
+}
+
+.cab-photo-click-label {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  left: 7px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: rgba(17, 24, 39, 0.76);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: 0.2s ease;
+}
+
+.cab-result-photo-button:hover .cab-photo-click-label,
+.cab-result-photo-button:focus-visible .cab-photo-click-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cab-result-photo-button:focus-visible {
+  outline: 3px solid #80b7ff;
+  outline-offset: 3px;
+}
+
+/* Optional image fallback class */
+
+.cab-result-photo-button.cab-photo-fallback {
+  display: grid;
+  place-items: center;
+}
+
+.cab-photo-fallback::after {
+  content: "Car image unavailable";
+  color: #667085;
+  font-size: 11px;
+}
+
+/* Vehicle details */
+
+.cab-result-info {
+  min-width: 0;
+}
+
+.cab-name-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.cab-name-link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #172033;
+  font-size: 19px;
+  font-weight: 800;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cab-name-link:hover {
+  color: #1769e0;
+}
+
+.cab-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 7px;
+  border-radius: 6px;
+  background: #e9f8ef;
+  color: #16803d;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.cab-vehicle {
+  margin: 7px 0 12px;
+  color: #778297;
+  font-size: 12px;
+}
+
+.cab-route {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  color: #475467;
+  font-size: 11px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.cab-route svg {
+  flex-shrink: 0;
+  color: #1769e0;
+}
+
+.cab-capacity {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 12px;
+}
+
+.cab-capacity span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #667085;
+  font-size: 11px;
+}
+
+.cab-capacity svg {
+  color: #1769e0;
+}
+
+.cab-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.cab-features span {
+  padding: 5px 8px;
+  border: 1px solid #e6ebf2;
+  border-radius: 6px;
+  background: #f7f9fc;
+  color: #596579;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =========================
+   PRICE COLUMN
+========================= */
+
+.cab-price-box {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  align-self: stretch;
+  padding-left: 13px;
+  border-left: 1px solid #edf0f5;
+}
+
+.cab-price-box > span {
+  color: #7b8798;
+  font-size: 10px;
+}
+
+.cab-price-box strong {
+  margin: 7px 0 2px;
+  color: #172033;
+  font-size: 23px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.cab-price-box small {
+  color: #8a94a6;
+  font-size: 10px;
+}
+
+.cab-price-box button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 15px;
+  padding: 11px 9px;
+  border: 0;
+  border-radius: 8px;
+  background: #1769e0;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cab-price-box button:hover {
+  background: #1256bd;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.cab-empty-state {
+  padding: 45px 20px;
+  border: 1px dashed #ccd6e4;
+  border-radius: 14px;
+  background: #fff;
+  color: #667085;
+  text-align: center;
+}
+
+.cab-empty-state > svg {
+  color: #1769e0;
+}
+
+.cab-empty-state h3 {
+  margin: 14px 0 7px;
+  color: #172033;
+}
+
+.cab-empty-state p {
+  margin: 0 0 16px;
+  font-size: 13px;
+}
+
+.cab-empty-state button {
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 8px;
+  background: #1769e0;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media (max-width: 1100px) {
+  .cab-search-box {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .cab-result-card {
+    grid-template-columns: 135px minmax(0, 1fr) 125px;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .cab-result-photo-button {
+    height: 112px;
+  }
+
+  .cab-price-box strong {
+    font-size: 20px;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+  .cab-search-box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 17px;
+  }
+
+  .cab-results-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cab-filter-box {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .cab-filter-heading {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  .cab-filter-box hr {
+    display: none;
+  }
+
+  .cab-filter-box .filter-section {
+    min-width: 0;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .cab-results-page {
+    padding: 20px 12px 40px;
+  }
+
+  .cab-result-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+    margin: 25px 0 16px;
+  }
+
+  .cab-result-top h1 {
+    font-size: 23px;
+  }
+
+  .cab-result-top h2 {
+    font-size: 21px;
+  }
+
+  .cab-search-box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .cab-search-main-btn {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  /* Keep Cabs Available and Sort By on one line */
+
+  .cab-list-heading {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 13px 10px;
+  }
+
+  .cab-list-heading > div {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .cab-list-heading strong {
+    font-size: 13px;
+  }
+
+  .cab-list-heading p {
+    font-size: 10px;
+  }
+
+  .cab-sort-control {
+    flex-direction: row;
+    flex-shrink: 0;
+    gap: 5px;
+  }
+
+  .cab-sort-control span {
+    font-size: 10px;
+  }
+
+  .cab-sort-control select {
+    width: 125px;
+    height: 34px;
+    font-size: 10px;
+  }
+
+  /* Filters */
+
+  .cab-filter-box {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .cab-filter-heading {
+    grid-column: auto;
+  }
+
+  .cab-filter-box hr {
+    display: block;
+    margin: 3px 0;
+  }
+
+  /* Cab cards */
+
+  .cab-result-card {
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 13px;
+    padding: 12px;
+  }
+
+  .cab-result-photo-button {
+    height: 94px;
+  }
+
+  .cab-name-link {
+    font-size: 16px;
+  }
+
+  .cab-vehicle {
+    margin: 5px 0 9px;
+  }
+
+  .cab-capacity {
+    gap: 8px;
+  }
+
+  .cab-features {
+    gap: 5px;
+  }
+
+  /* Price moves below details */
+
+  .cab-price-box {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 4px 12px;
+    padding: 12px 0 0;
+    border-top: 1px solid #edf0f5;
+    border-left: 0;
+  }
+
+  .cab-price-box > span {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .cab-price-box strong {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0;
+    font-size: 22px;
+  }
+
+  .cab-price-box small {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .cab-price-box button {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    width: auto;
+    min-width: 118px;
+    margin: 0;
+    padding: 12px 10px;
+  }
+
+  .cab-photo-click-label {
+    opacity: 1;
+    transform: none;
+    font-size: 9px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 520px) {
+  .cab-search-box {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .cab-result-top h2 {
+    font-size: 21px;
+  }
+}
+
+/* =========================
+   EXTRA SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+  .cab-results-page {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .cab-list-heading {
+    gap: 5px;
+    padding: 11px 8px;
+  }
+
+  .cab-list-heading strong {
+    font-size: 12px;
+  }
+
+  .cab-list-heading p {
+    font-size: 9px;
+  }
+
+  .cab-sort-control {
+    gap: 4px;
+  }
+
+  .cab-sort-control span {
+    font-size: 9px;
+  }
+
+  .cab-sort-control select {
+    width: 105px;
+    padding-left: 6px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 360px) {
+  .cab-result-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cab-result-photo-button {
+    height: 155px;
+  }
+
+  .cab-price-box button {
+    min-width: 105px;
+  }
+}
+
+/* Remove vertical line beside price */
+
+.cab-price-box {
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+
+/* Remove arrow icon inside SELECT CAB button */
+
+.cab-price-box button svg {
+  display: none !important;
+}

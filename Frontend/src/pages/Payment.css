@@ -1,0 +1,1264 @@
+
+/* =========================================
+   MK TRAVELS - PAYMENT PAGE
+   QR Payment + UPI App + Screenshot Upload
+========================================= */
+
+.payment-page {
+  min-height: 100vh;
+  padding: 30px 0 70px;
+  background: #f5f7fb;
+  color: #111827;
+  box-sizing: border-box;
+}
+
+.payment-page *,
+.payment-success-page *,
+.payment-not-found * {
+  box-sizing: border-box;
+}
+
+.payment-container {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.payment-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 20px;
+  padding: 0;
+  color: #374151;
+  background: transparent;
+  border: 0;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.payment-back-link:hover {
+  color: #2563eb;
+}
+
+.payment-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 12px;
+  padding: 10px 15px;
+  color: #fff;
+  background: #2563eb;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.payment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.payment-label {
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.payment-header h1 {
+  margin: 5px 0;
+  color: #111827;
+  font-size: 30px;
+  line-height: 1.25;
+}
+
+.payment-header p {
+  margin: 7px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.payment-secure {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  color: #15803d;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.payment-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 350px;
+  align-items: start;
+  gap: 22px;
+}
+
+.payment-main {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* =========================================
+   COMMON PAYMENT CARDS
+========================================= */
+
+.payment-card {
+  min-width: 0;
+  padding: 25px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 13px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+}
+
+.qr-payment-card,
+.utr-card {
+  overflow: hidden;
+}
+
+.payment-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.payment-heading-icon {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  background: #eff6ff;
+  border-radius: 10px;
+}
+
+.payment-card-heading h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.payment-card-heading p {
+  margin: 4px 0 0;
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   QR PAYMENT AMOUNT
+========================================= */
+
+.qr-payment-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin: 22px 0;
+  padding: 18px;
+  background: #f5f1ff;
+  border: 1px solid #ede5ff;
+  border-radius: 14px;
+}
+
+.qr-payment-amount span {
+  color: #5e6472;
+  font-size: 14px;
+}
+
+.qr-payment-amount strong {
+  color: #5420a8;
+  font-size: 30px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   QR IMAGE
+========================================= */
+
+.phonepe-qr-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e8e5ef;
+  border-radius: 16px;
+}
+
+.phonepe-qr-image {
+  display: block;
+  width: min(100%, 340px);
+  max-height: 420px;
+  height: auto;
+  object-fit: contain;
+}
+
+.phonepe-qr-wrapper p {
+  margin: 0;
+  color: #555b67;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   PAY VIA UPI APP
+========================================= */
+
+.upi-app-button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 0 8px;
+}
+
+.upi-app-note {
+  margin: 8px 0 18px;
+  color: #64748b;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   QR INSTRUCTIONS
+========================================= */
+
+.qr-payment-instructions {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0;
+  padding-left: 22px;
+  color: #424958;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.qr-payment-instructions li {
+  padding-left: 3px;
+}
+
+/* =========================================
+   PAYMENT WARNING
+========================================= */
+
+.payment-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px;
+  color: #77530a;
+  background: #fff8e8;
+  border: 1px solid #fce8b2;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.payment-warning svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* =========================================
+   COUPON
+========================================= */
+
+.coupon-card {
+  padding: 20px 25px;
+}
+
+.coupon-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.coupon-icon {
+  display: flex;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  color: #d97706;
+  background: #fffbeb;
+  border-radius: 8px;
+}
+
+.coupon-heading h2 {
+  margin: 0;
+  color: #374151;
+  font-size: 15px;
+}
+
+.coupon-heading p {
+  margin: 4px 0 0;
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.coupon-form {
+  display: flex;
+  gap: 8px;
+}
+
+.coupon-form input {
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  flex: 1;
+  padding: 0 12px;
+  color: #111827;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  outline: none;
+  font: inherit;
+  font-size: 12px;
+}
+
+.coupon-form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.coupon-form button {
+  min-width: 78px;
+  padding: 0 12px;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.coupon-form button:disabled {
+  color: #15803d;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  cursor: default;
+}
+
+.coupon-error {
+  display: block;
+  margin-top: 8px;
+  color: #dc2626;
+  font-size: 11px;
+}
+
+.coupon-success {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 10px;
+  color: #15803d;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.coupon-success svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* =========================================
+   SCREENSHOT UPLOAD
+========================================= */
+
+.utr-card form {
+  display: grid;
+  gap: 15px;
+}
+
+.payment-upload-box {
+  display: flex;
+  min-width: 0;
+  min-height: 180px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 0;
+  padding: 28px 16px;
+  color: #1e3a5f;
+  text-align: center;
+  background: #f8fafc;
+  border: 2px dashed #b8c7d9;
+  border-radius: 14px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.payment-upload-box:hover {
+  background: #eff6ff;
+  border-color: #2563eb;
+}
+
+.payment-upload-box:focus-within {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+
+.payment-upload-box strong {
+  max-width: 100%;
+  color: #1e3a5f;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.payment-upload-box span {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.payment-screenshot-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.payment-screenshot-preview img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  max-height: 360px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.payment-screenshot-preview button {
+  padding: 8px 12px;
+  color: #dc2626;
+  background: #fff;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.payment-screenshot-preview button:hover {
+  background: #fef2f2;
+}
+
+/* =========================================
+   PAYMENT ERROR
+========================================= */
+
+.payment-error {
+  margin-top: 10px;
+  padding: 11px 12px;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   SUBMIT PAYMENT BUTTON
+========================================= */
+
+.pay-now-button {
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 13px 16px;
+  color: #fff;
+  background: #2563eb;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  transition: background 0.2s ease;
+}
+
+.pay-now-button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.pay-now-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   PAYMENT PROTECTION
+========================================= */
+
+.payment-protection {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  color: #15803d;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.payment-protection svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* =========================================
+   PAYMENT SUMMARY
+========================================= */
+
+.payment-summary {
+  position: sticky;
+  top: 90px;
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 13px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================================
+   BOOKING ITEM
+========================================= */
+
+.payment-tour {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.payment-tour img {
+  display: block;
+  width: 90px;
+  height: 70px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.payment-tour > div {
+  min-width: 0;
+}
+
+.payment-tour h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.payment-tour div > span {
+  display: block;
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.payment-tour-image-placeholder {
+  display: flex;
+  width: 90px;
+  height: 70px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  background: #eff6ff;
+  border-radius: 7px;
+}
+
+/* =========================================
+   BOOKING DETAILS
+========================================= */
+
+.summary-details {
+  padding: 17px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.summary-details h3,
+.payment-price h3,
+.customer-summary h3 {
+  margin: 0 0 14px;
+  color: #374151;
+  font-size: 14px;
+}
+
+.summary-detail-row {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 7px;
+  margin-bottom: 13px;
+}
+
+.summary-detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.summary-detail-row svg {
+  color: #2563eb;
+  margin-top: 1px;
+}
+
+.summary-detail-row span {
+  min-width: 0;
+  color: #6b7280;
+  font-size: 10px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.summary-detail-row strong {
+  max-width: 140px;
+  color: #374151;
+  text-align: right;
+  font-size: 10px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   PRICE SUMMARY
+========================================= */
+
+.payment-price {
+  padding: 18px 17px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.payment-price-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 11px;
+}
+
+.payment-price-row span {
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.payment-price-row strong {
+  color: #374151;
+  text-align: right;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.payment-price-row.discount strong {
+  color: #16a34a;
+}
+
+.payment-divider {
+  height: 1px;
+  margin: 14px 0;
+  background: #eef2f7;
+}
+
+.payment-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.payment-total span {
+  color: #111827;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.payment-total strong {
+  color: #111827;
+  text-align: right;
+  font-size: 20px;
+  overflow-wrap: anywhere;
+}
+
+.payment-price small {
+  display: block;
+  margin-top: 7px;
+  color: #15803d;
+  text-align: right;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   CUSTOMER DETAILS
+========================================= */
+
+.customer-summary {
+  padding: 17px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.customer-summary > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 11px;
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.customer-summary > div:last-child {
+  margin-bottom: 0;
+}
+
+.customer-summary svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #2563eb;
+}
+
+.customer-summary > div span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   SUMMARY SECURITY
+========================================= */
+
+.payment-summary-security {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 15px;
+  padding: 12px;
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  border-radius: 8px;
+}
+
+.payment-summary-security > svg {
+  flex-shrink: 0;
+  color: #16a34a;
+}
+
+.payment-summary-security div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.payment-summary-security strong {
+  color: #166534;
+  font-size: 11px;
+}
+
+.payment-summary-security span {
+  color: #4d7c0f;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* Summary explore button */
+.payment-summary > .success-tours-button {
+  display: flex;
+  justify-content: center;
+  margin: 0 15px 16px;
+  padding: 11px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* =========================================
+   SUCCESS / PENDING PAGE
+========================================= */
+
+.payment-success-page {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #f5f7fb;
+}
+
+.success-card {
+  width: min(600px, 100%);
+  padding: 40px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+}
+
+.success-icon {
+  display: flex;
+  width: 72px;
+  height: 72px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 17px;
+  color: #fff;
+  background: #16a34a;
+  border-radius: 50%;
+}
+
+.success-icon.pending {
+  color: #946200;
+  background: #fff4d6;
+}
+
+.success-label {
+  color: #b77900;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.7;
+}
+
+.success-card h1 {
+  margin: 9px 0;
+  color: #111827;
+  font-size: 30px;
+}
+
+.success-message {
+  max-width: 470px;
+  margin: 0 auto;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   BOOKING CONFIRMATION
+========================================= */
+
+.booking-confirmation {
+  margin-top: 25px;
+  padding: 17px;
+  text-align: left;
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+  border-radius: 9px;
+}
+
+.confirmation-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.confirmation-row:last-child {
+  border-bottom: none;
+}
+
+.confirmation-row span {
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.confirmation-row strong {
+  max-width: 60%;
+  color: #374151;
+  text-align: right;
+  font-size: 11px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.confirmation-row.total {
+  margin-top: 5px;
+  padding-top: 14px;
+}
+
+.confirmation-row.total strong {
+  color: #15803d;
+  font-size: 18px;
+}
+
+/* =========================================
+   SUCCESS CONTACT
+========================================= */
+
+.success-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 18px;
+  color: #6b7280;
+  font-size: 10px;
+}
+
+.success-contact svg {
+  color: #2563eb;
+}
+
+/* =========================================
+   SUCCESS BUTTONS
+========================================= */
+
+.success-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.success-home-button,
+.success-tours-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 17px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  transition: background 0.2s ease;
+}
+
+.success-home-button {
+  color: #fff;
+  background: #2563eb;
+  border: 1px solid #2563eb;
+}
+
+.success-home-button:hover {
+  background: #1d4ed8;
+}
+
+.success-tours-button {
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+.success-tours-button:hover {
+  background: #dbeafe;
+}
+
+/* =========================================
+   BOOKING NOT FOUND
+========================================= */
+
+.payment-not-found {
+  display: flex;
+  min-height: 60vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  text-align: center;
+  background: #f5f7fb;
+}
+
+.payment-not-found h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 25px;
+}
+
+.payment-not-found p {
+  max-width: 480px;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .payment-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .payment-summary {
+    position: static;
+    order: -1;
+  }
+
+  .payment-tour img,
+  .payment-tour-image-placeholder {
+    width: 100px;
+    height: 75px;
+  }
+
+  .summary-detail-row strong {
+    max-width: 55%;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .payment-page {
+    padding: 20px 0 45px;
+  }
+
+  .payment-container {
+    width: calc(100% - 20px);
+  }
+
+  .payment-header {
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .payment-header h1 {
+    font-size: 24px;
+  }
+
+  .payment-header p {
+    font-size: 12px;
+  }
+
+  .payment-secure {
+    padding: 8px;
+    font-size: 0;
+  }
+
+  .payment-secure svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .payment-card {
+    padding: 17px;
+    border-radius: 11px;
+  }
+
+  .payment-card-heading {
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .payment-heading-icon {
+    width: 37px;
+    height: 37px;
+  }
+
+  .payment-card-heading h2 {
+    font-size: 16px;
+  }
+
+  .payment-card-heading p {
+    font-size: 11px;
+  }
+
+  .qr-payment-amount {
+    margin: 16px 0;
+    padding: 16px 10px;
+  }
+
+  .qr-payment-amount strong {
+    font-size: 26px;
+  }
+
+  .phonepe-qr-wrapper {
+    padding: 12px;
+  }
+
+  .phonepe-qr-image {
+    width: min(100%, 300px);
+  }
+
+  .qr-payment-instructions {
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .payment-warning {
+    padding: 11px;
+    font-size: 11px;
+  }
+
+  .coupon-card {
+    padding: 17px;
+  }
+
+  .payment-upload-box {
+    min-height: 155px;
+    padding: 22px 12px;
+  }
+
+  .payment-upload-box strong {
+    font-size: 12px;
+  }
+
+  .payment-upload-box span {
+    font-size: 11px;
+  }
+
+  .payment-tour {
+    padding: 13px;
+  }
+
+  .payment-tour img,
+  .payment-tour-image-placeholder {
+    width: 78px;
+    height: 65px;
+  }
+
+  .summary-details,
+  .payment-price,
+  .customer-summary {
+    padding: 15px;
+  }
+
+  .summary-detail-row {
+    grid-template-columns: 18px minmax(0, 1fr) minmax(70px, 45%);
+    gap: 5px;
+  }
+
+  .summary-detail-row strong {
+    max-width: 100%;
+    font-size: 10px;
+  }
+
+  .success-card {
+    padding: 28px 17px;
+  }
+
+  .success-card h1 {
+    font-size: 25px;
+  }
+
+  .success-message {
+    font-size: 12px;
+  }
+
+  .booking-confirmation {
+    padding: 12px;
+  }
+
+  .confirmation-row {
+    gap: 10px;
+  }
+
+  .confirmation-row span {
+    font-size: 10px;
+  }
+
+  .confirmation-row strong {
+    font-size: 10px;
+  }
+
+  .success-actions {
+    flex-direction: column;
+  }
+
+  .success-home-button,
+  .success-tours-button {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .payment-header h1 {
+    font-size: 21px;
+  }
+
+  .payment-card {
+    padding: 14px;
+  }
+
+  .coupon-form {
+    flex-direction: column;
+  }
+
+  .coupon-form button {
+    min-height: 40px;
+  }
+
+  .summary-detail-row {
+    grid-template-columns: 17px minmax(0, 1fr);
+  }
+
+  .summary-detail-row strong {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .payment-total strong {
+    font-size: 17px;
+  }
+}
