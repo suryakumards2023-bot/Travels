@@ -16,12 +16,13 @@ if (!process.env.MONGODB_URI || !process.env.JWT_SECRET) {
   throw new Error("MONGODB_URI and JWT_SECRET must be configured.");
 }
 
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://YOUR-VERCEL-DOMAIN.vercel.app"
+  ],
+  credentials: true
+}));
 
 // Existing middleware
 app.use(express.json({ limit: "4mb" }));
