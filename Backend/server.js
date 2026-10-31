@@ -19,7 +19,8 @@ if (!process.env.MONGODB_URI || !process.env.JWT_SECRET) {
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://YOUR-VERCEL-DOMAIN.vercel.app"
+    "https://travels-sepia.vercel.app",
+    "https://travels-l1ayq4zuf-suryakumards2023-7738.vercel.app"
   ],
   credentials: true
 }));
