@@ -1,6 +1,7 @@
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "https://travels-o8sx.onrender.com";
+  import.meta.env.VITE_API_URL ||
+  "https://travels-o8sx.onrender.com/api";
 
 export async function apiRequest(path, options = {}) {
   const response = await fetch(`${API_BASE_URL}${path}`, {
